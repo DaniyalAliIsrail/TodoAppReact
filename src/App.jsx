@@ -38,20 +38,19 @@ function App() {
   // ******************** EditTodo function ****************************************
 
   const editTodo = (index) => {
-    uiShow.forEach((element) => {
+    uiShow.forEach((element) => {                                  
       console.log(element);
       element.isEdit = false;
     });
+    
     uiShow[index].isEdit = true;
     setuiShow([...uiShow]);
     setuiInput(uiShow[index].value); //setuiinput 3rd state hay or iskay kay andr first vlaue savehay hay js may nay bilal lkh kr addtodo keya
   };
   const edit_todo_element = (index) => {
-    uiShow[index].isEdit = false; //Object kay andr jo isedit name k kay hay usay false kardo
-    uiShow[index].value = uiinput;  //Object kay andr jo value name k key hay usay default value pr save krado ku kay user nay kch changes nhy kyea or na edit
+    uiShow[index].isEdit = false;//(save pay click to dusry field false mtlb ui say input gaebshah)
+    uiShow[index].value = uiinput;//jo value input may deya hay hamnay wo save hojae save pr click krnay say or uiShow[index].value iska matlab hay array k current value kay andr jo new value wo save hojae
     setuiShow([...uiShow]);
-    uiinput[index] = uiShow[index].value;
-    setuiInput([...uiinput]);
   };
 
 
